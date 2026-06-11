@@ -685,14 +685,14 @@ img.full { width: 100%; display: block; margin: 10px 0; }
       <tr><th>項目</th><th style="text-align:right;width:160px">金額</th><th style="text-align:right;width:80px">構成比</th></tr>
     </thead>
     <tbody>
-      <tr><td>売上高</td><td style="text-align:right">2,000,000円</td><td style="text-align:right">100%</td></tr>
-      <tr><td>売上原価</td><td style="text-align:right">600,000円</td><td style="text-align:right">30%</td></tr>
-      <tr class="row-hl"><td>粗利益</td><td style="text-align:right">1,400,000円</td><td style="text-align:right">70%</td></tr>
-      <tr><td>人件費</td><td style="text-align:right">500,000円</td><td style="text-align:right">25%</td></tr>
-      <tr><td>家賃</td><td style="text-align:right">200,000円</td><td style="text-align:right">10%</td></tr>
-      <tr><td>ロイヤリティ等</td><td style="text-align:right">100,000円</td><td style="text-align:right">5%</td></tr>
-      <tr><td>その他経費</td><td style="text-align:right">100,000円</td><td style="text-align:right">5%</td></tr>
-      <tr class="row-dark"><td>営業利益</td><td style="text-align:right">500,000円</td><td style="text-align:right">25%</td></tr>
+      <tr><td>売上高</td><td style="text-align:right">3,000,000円</td><td style="text-align:right">100%</td></tr>
+      <tr><td>売上原価</td><td style="text-align:right">900,000円</td><td style="text-align:right">30%</td></tr>
+      <tr class="row-hl"><td>粗利益</td><td style="text-align:right">2,100,000円</td><td style="text-align:right">70%</td></tr>
+      <tr><td>人件費</td><td style="text-align:right">750,000円</td><td style="text-align:right">25%</td></tr>
+      <tr><td>家賃</td><td style="text-align:right">200,000円</td><td style="text-align:right">7%</td></tr>
+      <tr><td>ロイヤリティ等</td><td style="text-align:right">150,000円</td><td style="text-align:right">5%</td></tr>
+      <tr><td>その他経費</td><td style="text-align:right">100,000円</td><td style="text-align:right">3%</td></tr>
+      <tr class="row-dark"><td>営業利益</td><td style="text-align:right">900,000円</td><td style="text-align:right">30%</td></tr>
     </tbody>
   </table>
 
@@ -712,42 +712,42 @@ img.full { width: 100%; display: block; margin: 10px 0; }
       <tr>
         <td>2026年（第1期）</td>
         <td style="text-align:center">1店</td>
-        <td style="text-align:right">8,000,000</td>
-        <td style="text-align:right" class="neg">▲2,000,000</td>
-        <td style="text-align:right" class="neg">▲2,000,000</td>
+        <td style="text-align:right">21,000,000</td>
+        <td style="text-align:right" class="neg">▲2,800,000</td>
+        <td style="text-align:right" class="neg">▲2,800,000</td>
       </tr>
       <tr>
         <td>2027年（第2期）</td>
         <td style="text-align:center">1店</td>
         <td style="text-align:right">24,000,000</td>
         <td style="text-align:right" class="pos">4,000,000</td>
-        <td style="text-align:right" class="pos">2,000,000</td>
+        <td style="text-align:right" class="pos">1,200,000</td>
       </tr>
       <tr>
         <td>2028年（第3期）</td>
         <td style="text-align:center">1〜2店</td>
         <td style="text-align:right">30,000,000</td>
         <td style="text-align:right" class="pos">6,000,000</td>
-        <td style="text-align:right" class="pos">8,000,000</td>
+        <td style="text-align:right" class="pos">7,200,000</td>
       </tr>
       <tr>
         <td>2029年（第4期）</td>
         <td style="text-align:center">2店</td>
         <td style="text-align:right">48,000,000</td>
         <td style="text-align:right" class="pos">10,000,000</td>
-        <td style="text-align:right" class="pos">18,000,000</td>
+        <td style="text-align:right" class="pos">17,200,000</td>
       </tr>
       <tr class="row-dark">
         <td>2030年（第5期）</td>
         <td style="text-align:center">2〜3店</td>
         <td style="text-align:right">60,000,000</td>
         <td style="text-align:right">13,000,000</td>
-        <td style="text-align:right">31,000,000</td>
+        <td style="text-align:right">30,200,000</td>
       </tr>
     </tbody>
   </table>
   <p style="font-size:11px;color:#999;margin-top:6px;line-height:1.65">
-    ※ 2026年第1期は開業準備（4〜8月）・オープン後4ヶ月（9〜12月）の売上。初期投資回収中のため赤字見込み。<br>
+    ※ 2026年第1期は開業準備（4〜8月）・オープン後7ヶ月（9月〜2027年3月）の売上（3月決算）。初期投資回収中のため赤字見込み。<br>
     ※ 2027年第2期より単年黒字化・累計損益回復を見込む。
   </p>
 
@@ -903,7 +903,7 @@ new Chart(document.getElementById('planChart'), {
     datasets: [
       {
         label: '年間売上高（万円）',
-        data: [800, 2400, 3000, 4800, 6000],
+        data: [2100, 2400, 3000, 4800, 6000],
         backgroundColor: 'rgba(200,150,12,0.15)',
         borderColor: '#c8960c',
         borderWidth: 1.5,
@@ -912,7 +912,7 @@ new Chart(document.getElementById('planChart'), {
       },
       {
         label: '営業利益（万円）',
-        data: [-200, 400, 600, 1000, 1300],
+        data: [-280, 400, 600, 1000, 1300],
         type: 'line',
         borderColor: '#1a2744',
         backgroundColor: 'rgba(26,39,68,0.06)',
