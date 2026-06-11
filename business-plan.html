@@ -14,7 +14,8 @@ body {
 }
 
 .page {
-  width: 794px;
+  max-width: 794px;
+  width: 100%;
   margin: 28px auto;
   background: white;
   position: relative;
@@ -289,11 +290,66 @@ img.full { width: 100%; display: block; margin: 10px 0; }
 
 /* Responsive */
 @media (max-width: 860px) {
-  .page { width: 100%; }
-  .inner { padding: 40px 28px 80px; }
-  .cover { padding: 44px 28px 0; height: auto; min-height: 100vh; }
-  .cover-title { font-size: 56px; }
-  .kpi-strip, .stat-row { grid-template-columns: repeat(2, 1fr); }
+  body { background: #e8e6e2; }
+  .page { margin: 0; box-shadow: none; }
+
+  /* Cover */
+  .cover { padding: 44px 24px 0; height: auto; min-height: 100svh; }
+  .cover-title { font-size: 52px; }
+  .cover-brand { font-size: 13px; letter-spacing: 3px; }
+  .circles { right: -180px; top: 20px; width: 420px; height: 420px; }
+  .cover-meta { grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .cover-meta-item .val { font-size: 13px; }
+  .cover-footer { padding: 14px 24px 22px; }
+  .cover-main { padding-bottom: 70px; }
+
+  /* Inner pages */
+  .inner { padding: 32px 18px 80px; }
+  .pg-foot { left: 18px; right: 18px; }
+  .sec-num { font-size: 38px; min-width: 52px; }
+  .sec-ja { font-size: 20px; }
+
+  /* Tables — horizontally scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  /* Cells that have long content: allow wrap */
+  table td, table th { white-space: normal; min-width: 72px; }
+  /* Profile table key column */
+  .profile-table td:first-child { min-width: 90px; width: 90px; }
+
+  /* KPI & stat grids: 2 columns */
+  .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+  .kpi-cell { border-bottom: 1px solid #e0dbd2; }
+  .kpi-cell:nth-child(2) { border-right: none; }
+  .kpi-cell:nth-child(3) { border-bottom: none; }
+  .kpi-big { font-size: 24px; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-cell { border-bottom: 1px solid #e0dbd2; }
+  .stat-cell:nth-child(2) { border-right: none; }
+  .stat-cell:nth-child(3) { border-bottom: none; }
+  .sc-big { font-size: 22px; }
+
+  /* Stacked duo images */
+  .duo { flex-direction: column; }
+  .duo img { width: 100% !important; }
+
+  /* Business model */
+  .biz-flow { padding: 20px 16px; }
+  .biz-box { width: 100%; max-width: 280px; }
+
+  /* Investment chart row */
+  .inner > div[style*="display:flex"][style*="gap:32px"] {
+    flex-direction: column;
+  }
+
+  /* Section header gap */
+  .sec-head { gap: 12px; }
+  .sub { padding: 5px 10px; }
 }
 </style>
 </head>
