@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>事業計画書 — 株式会社LOOPERS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #7ec8b5;
+      --brown: #5c3d2e;
+      --orange: #e8874a;
+      --black: #1a1a1a;
+      --gray: #f7f7f5;
+      --font: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    }
+    body { font-family: var(--font); color: var(--black); line-height: 1.75; font-size: 15px; background: #fff; }
+    .page { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
+
+    /* Cover */
+    .cover { background: var(--brown); color: #fff; padding: 64px 48px; border-radius: 4px; margin-bottom: 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .cover-left h1 { font-size: 13px; letter-spacing: 0.15em; opacity: 0.7; margin-bottom: 12px; }
+    .cover-left h2 { font-size: 36px; font-weight: 800; letter-spacing: 0.05em; line-height: 1.2; margin-bottom: 20px; }
+    .cover-left p { font-size: 14px; opacity: 0.65; }
+    .cover-right { text-align: right; }
+    .cover-right .company { font-size: 22px; font-weight: 700; }
+    .cover-right .date { font-size: 13px; opacity: 0.65; margin-top: 6px; }
+
+    /* Section */
+    .section { margin-bottom: 56px; }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--brown); border-left: 5px solid var(--green); padding-left: 14px; margin-bottom: 28px; }
+    .subsection-title { font-size: 16px; font-weight: 700; color: var(--brown); margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 2px solid #ece8e4; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px; }
+    th, td { padding: 11px 14px; border: 1px solid #e0dbd6; text-align: left; vertical-align: top; }
+    th { background: var(--gray); font-weight: 600; width: 180px; color: #555; }
+    td strong { color: var(--brown); }
+
+    /* Highlight cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .card { background: var(--gray); border-radius: 8px; padding: 20px 18px; border-top: 4px solid var(--green); }
+    .card .num { font-size: 28px; font-weight: 800; color: var(--brown); line-height: 1; }
+    .card .label { font-size: 12px; color: #777; margin-top: 4px; }
+
+    /* PDF images */
+    .pdf-img { width: 100%; border-radius: 8px; margin: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .img-caption { font-size: 12px; color: #888; text-align: center; margin-top: -10px; margin-bottom: 20px; }
+    .img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .img-row img { width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+
+    /* Chart */
+    .chart-wrap { background: var(--gray); border-radius: 8px; padding: 28px 24px; margin: 20px 0; }
+    .chart-wrap h4 { font-size: 14px; font-weight: 700; color: #555; margin-bottom: 16px; }
+
+    /* List */
+    ul.styled { padding-left: 0; list-style: none; }
+    ul.styled li { padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid #f0ebe6; font-size: 14px; }
+    ul.styled li::before { content: '●'; position: absolute; left: 0; color: var(--green); font-size: 10px; top: 11px; }
+
+    /* Risk table */
+    .risk-table th:first-child { width: 140px; }
+
+    /* Footer */
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #e0dbd6; text-align: center; font-size: 12px; color: #aaa; }
+
+    /* Print */
+    @media print {
+      .page { padding: 24px 20px; }
+      .cover { padding: 40px 32px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="cover-left">
+      <h1>BUSINESS PLAN</h1>
+      <h2>事業計画書</h2>
+      <p>法人銀行口座開設用</p>
+    </div>
+    <div class="cover-right">
+      <div class="company">株式会社LOOPERS</div>
+      <div class="date">2026年6月</div>
+    </div>
+  </div>
+
+  <!-- 1. 会社基本情報 -->
+  <div class="section">
+    <div class="section-title">1. 会社基本情報</div>
+    <table>
+      <tr><th>商号</th><td>株式会社LOOPERS</td></tr>
+      <tr><th>代表取締役</th><td>大川 樹</td></tr>
+      <tr><th>所在地</th><td>〒163-0649 東京都新宿区西新宿１−２５−１<br>新宿センタービル49階 +OURS新宿内</td></tr>
+      <tr><th>設立年月日</th><td>2026年4月8日</td></tr>
+      <tr><th>資本金</th><td>1,000,000円（100万円）</td></tr>
+      <tr><th>事業目的</th><td>フランチャイズ加盟店の運営・管理</td></tr>
+    </table>
+  </div>
+
+  <!-- 2. 事業概要 -->
+  <div class="section">
+    <div class="section-title">2. 事業概要</div>
+
+    <div class="subsection-title">2-1. 事業の概要</div>
+    <p>当社は、韓国発のスペシャルティチュロスブランド「STREET CHURROS」のフランチャイズ加盟店として、商業施設への出店および運営を行います。フランチャイズ本部である株式会社EMOLEEと加盟契約を締結し、専門の運営代行会社を活用しながら収益力の高い立地への出店を推進します。</p>
+
+    <div class="subsection-title">2-2. ブランド実績 — STREET CHURROS</div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="num">9ヵ国</div>
+        <div class="label">グローバル展開（2026年12ヵ国予定）</div>
+      </div>
+      <div class="card">
+        <div class="num">150店舗超</div>
+        <div class="label">韓国・マレーシア等での累計展開数</div>
+      </div>
+      <div class="card">
+        <div class="num">2,000万本</div>
+        <div class="label">累計販売数</div>
+      </div>
+    </div>
+
+    <!-- タイムライン -->
+    <img src="img/churros_p6.png" class="pdf-img" alt="STREET CHURROSブランド歴史タイムライン（2014〜2025）">
+    <p class="img-caption">ブランド年表：2014年韓国創業→2019年ハーバードビジネススクール選定→2024年日本上陸</p>
+
+    <!-- ハーバード -->
+    <div class="subsection-title">2-3. ハーバードビジネススクール選定</div>
+    <img src="img/churros_p7.png" class="pdf-img" alt="ハーバードビジネススクールによるブランド成功事例選定">
+    <p class="img-caption">2019年、ハーバードビジネススクールのブランド成功事例分析対象企業に選定（世界的ブランドと並んで研究・分析の対象となる）</p>
+
+    <!-- グローバルマップ -->
+    <div class="subsection-title">2-4. グローバル展開</div>
+    <img src="img/churros_p8.png" class="pdf-img" alt="STREET CHURROS 9ヵ国グローバル展開マップ">
+    <p class="img-caption">韓国・米国・中国・マレーシア・台湾・タイ・インドネシア・日本・モンゴルの9ヵ国に展開</p>
+
+    <!-- 商品 -->
+    <div class="subsection-title">2-5. 商品の特徴</div>
+    <img src="img/churros_p10.png" class="pdf-img" alt="STREET CHURROSの商品">
+    <p class="img-caption">16種類のヘルシーな穀物をブレンドした独自生地。バリスタチャンピオン監修のドリンクも提供</p>
+
+    <!-- 強み -->
+    <div class="subsection-title">2-6. 運営の強み</div>
+    <img src="img/churros_p14.png" class="pdf-img" alt="STREET CHURROSの運営の強み">
+    <p class="img-caption">少人数・小スペース運営、離職率7%（業界平均26.8%）、万全のフォロー体制</p>
+
+    <!-- メディア -->
+    <div class="subsection-title">2-7. メディア・集客実績</div>
+    <img src="img/churros_p15.png" class="pdf-img" alt="メディア実績：BTSほか">
+    <p class="img-caption">BTSメンバーによる韓国での実食、国内インフルエンサーとのコラボ実績多数。広告費ゼロでSNS自然拡散</p>
+  </div>
+
+  <!-- 3. 出店計画 -->
+  <div class="section">
+    <div class="section-title">3. 出店計画</div>
+    <div class="subsection-title">第1号店：シャミネ松江</div>
+    <table>
+      <tr><th>施設名</th><td>シャミネ松江（JR松江駅直結商業施設）</td></tr>
+      <tr><th>所在地</th><td>島根県松江市</td></tr>
+      <tr><th>オープン予定</th><td>2026年9月</td></tr>
+      <tr><th>家賃条件</th><td>月額最低賃料20万円（売上200万円超過分の10%）</td></tr>
+      <tr><th>位置付け</th><td>中国地方初出店。施設リニューアルの目玉として誘致。施設内スタバ・マネケンの実績から高い売上ポテンシャルを確認済み</td></tr>
+    </table>
+
+    <div class="subsection-title">中期出店ロードマップ</div>
+    <table>
+      <tr><th>2026年9月</th><td>第1号店（シャミネ松江）オープン</td></tr>
+      <tr><th>2027年</th><td>第1号店の実績をもとに2店舗目の立地選定・申込開始</td></tr>
+      <tr><th>2028年以降</th><td>全国の駅商業施設・大型ショッピングモールへの多店舗展開</td></tr>
+    </table>
+  </div>
+
+  <!-- 4. 収支計画 -->
+  <div class="section">
+    <div class="section-title">4. 収支計画（5カ年）</div>
+
+    <div class="subsection-title">既存店舗の月商実績</div>
+    <div class="chart-wrap">
+      <h4>既存店舗 月商比較（万円）</h4>
+      <canvas id="storeChart" height="120"></canvas>
+    </div>
+
+    <div class="subsection-title">月次収支モデル（安定期・1店舗）</div>
+    <table>
+      <tr><th>売上高</th><td>2,000,000円（100%）</td></tr>
+      <tr><th>売上原価</th><td>600,000円（30%）</td></tr>
+      <tr><th>粗利益</th><td><strong>1,400,000円（70%）</strong></td></tr>
+      <tr><th>人件費</th><td>500,000円（25%）</td></tr>
+      <tr><th>家賃</th><td>200,000円（10%）</td></tr>
+      <tr><th>ロイヤリティ等</th><td>100,000円（5%）</td></tr>
+      <tr><th>その他経費</th><td>100,000円（5%）</td></tr>
+      <tr><th>営業利益</th><td><strong>500,000円（25%）</strong></td></tr>
+    </table>
+
+    <div class="subsection-title">5カ年収支計画</div>
+    <div class="chart-wrap">
+      <h4>年間売上高・営業利益の推移（万円）</h4>
+      <canvas id="planChart" height="180"></canvas>
+    </div>
+    <table>
+      <tr><th>2026年（第1期）</th><td>売上高 800万円 ／ 営業利益 ▲200万円（開業4ヶ月・初期投資回収中）</td></tr>
+      <tr><th>2027年（第2期）</th><td>売上高 2,400万円 ／ 営業利益 400万円（単年黒字化・累計損益回復）</td></tr>
+      <tr><th>2028年（第3期）</th><td>売上高 3,000万円 ／ 営業利益 600万円（1〜2店舗）</td></tr>
+      <tr><th>2029年（第4期）</th><td>売上高 4,800万円 ／ 営業利益 1,000万円（2店舗）</td></tr>
+      <tr><th>2030年（第5期）</th><td>売上高 6,000万円 ／ 営業利益 1,300万円（2〜3店舗）</td></tr>
+    </table>
+
+    <div class="subsection-title">初期投資の内訳</div>
+    <div class="chart-wrap">
+      <h4>初期投資構成（合計 910万円）</h4>
+      <canvas id="investChart" height="180"></canvas>
+    </div>
+  </div>
+
+  <!-- 5. 資金計画 -->
+  <div class="section">
+    <div class="section-title">5. 資金計画</div>
+    <p style="margin-bottom:16px">初期投資の大部分は自己資金で賄います。2店舗目以降の規模拡大に際しては、第1号店の実績を踏まえた金融機関融資の活用も検討します。</p>
+    <table>
+      <tr><th>自己資金（資本金）</th><td>1,000,000円（11%）</td></tr>
+      <tr><th>自己資金（加盟料等既払い）</th><td>3,300,000円（36%）</td></tr>
+      <tr><th>自己資金（追加）</th><td>4,800,000円（53%）</td></tr>
+      <tr><th>合計</th><td><strong>9,100,000円（自己資金100%）</strong></td></tr>
+    </table>
+
+    <div class="subsection-title">口座の活用目的</div>
+    <ul class="styled">
+      <li>内装工事会社・仕入先への支払い</li>
+      <li>FCフランチャイズ本部へのロイヤリティ支払い</li>
+      <li>人件費・運転資金の管理</li>
+      <li>商業施設からの売上入金口座</li>
+    </ul>
+  </div>
+
+  <!-- 6. 強みとリスク -->
+  <div class="section">
+    <div class="section-title">6. 強みとリスク対策</div>
+    <div class="subsection-title">強み</div>
+    <ul class="styled">
+      <li>ハーバードビジネススクール選定ブランドへの加盟。世界9ヵ国・累計2,000万本販売の実績</li>
+      <li>JR系商業施設（シャミネ松江）への出店確定。安定した集客基盤と家賃優遇条件を獲得済み</li>
+      <li>専門の運営代行会社（EMOLEE）による経理・雇用・店舗運営の一括委託</li>
+      <li>フランチャイズ本部による物件探し・設計・研修・採用の全面サポート（成功率約80%）</li>
+    </ul>
+
+    <div class="subsection-title">リスクと対策</div>
+    <table class="risk-table">
+      <tr><th>売上未達リスク</th><td>開業3ヶ月分の運転資金を確保。FC本部のデータに基づく保守的な売上計画で設計</td></tr>
+      <tr><th>施工・開業遅延</th><td>施設側との連携をFC本部が主導。スケジュール管理は本部に委託</td></tr>
+      <tr><th>競合リスク</th><td>駅構内という独自立地。持ち帰り特化かつ健康志向の商品設計で競合と明確に差別化</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>本事業計画書は銀行口座開設用として作成されたものです。</p>
+    <p style="margin-top:4px">株式会社LOOPERS &nbsp;/&nbsp; 2026年6月</p>
+  </footer>
+
+</div>
+
+<script>
+// 既存店舗月商
+new Chart(document.getElementById('storeChart'), {
+  type: 'bar',
+  data: {
+    labels: ['下北沢1号店（路面）', 'ららぽーと堺（商業施設）', 'シャミネ松江（計画値）'],
+    datasets: [{
+      label: '月商（万円）',
+      data: [300, 400, 200],
+      backgroundColor: ['#7ec8b5', '#5ca891', '#e8c4a0'],
+      borderRadius: 6
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { callback: v => v + '万' } } }
+  }
+});
+
+// 5カ年収支
+new Chart(document.getElementById('planChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2026年', '2027年', '2028年', '2029年', '2030年'],
+    datasets: [
+      {
+        label: '年間売上高',
+        data: [800, 2400, 3000, 4800, 6000],
+        backgroundColor: '#7ec8b5',
+        borderRadius: 4,
+        order: 2
+      },
+      {
+        label: '営業利益',
+        data: [-200, 400, 600, 1000, 1300],
+        type: 'line',
+        borderColor: '#5c3d2e',
+        backgroundColor: 'rgba(92,61,46,0.1)',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#5c3d2e',
+        tension: 0.3,
+        order: 1
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom' } },
+    scales: { y: { ticks: { callback: v => v + '万' } } }
+  }
+});
+
+// 初期投資内訳
+new Chart(document.getElementById('investChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['FC加盟料', '内装・設備工事', '什器・備品', '法人設立費用', '運転資金'],
+    datasets: [{
+      data: [330, 400, 50, 30, 100],
+      backgroundColor: ['#7ec8b5', '#5ca891', '#a8d8cc', '#e8c4a0', '#d4a878'],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { position: 'right' },
+      tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '万円' } }
+    }
+  }
+});
+</script>
+</body>
+</html>
