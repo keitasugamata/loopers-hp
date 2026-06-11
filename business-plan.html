@@ -1,337 +1,900 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>事業計画書 — 株式会社LOOPERS</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green: #7ec8b5;
-      --brown: #5c3d2e;
-      --orange: #e8874a;
-      --black: #1a1a1a;
-      --gray: #f7f7f5;
-      --font: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    }
-    body { font-family: var(--font); color: var(--black); line-height: 1.75; font-size: 15px; background: #fff; }
-    .page { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業計画書 | 株式会社LOOPERS × STREET CHURROS</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Cover */
-    .cover { background: var(--brown); color: #fff; padding: 64px 48px; border-radius: 4px; margin-bottom: 48px; display: flex; justify-content: space-between; align-items: flex-end; }
-    .cover-left h1 { font-size: 13px; letter-spacing: 0.15em; opacity: 0.7; margin-bottom: 12px; }
-    .cover-left h2 { font-size: 36px; font-weight: 800; letter-spacing: 0.05em; line-height: 1.2; margin-bottom: 20px; }
-    .cover-left p { font-size: 14px; opacity: 0.65; }
-    .cover-right { text-align: right; }
-    .cover-right .company { font-size: 22px; font-weight: 700; }
-    .cover-right .date { font-size: 13px; opacity: 0.65; margin-top: 6px; }
+body {
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic Medium', 'Noto Sans JP', sans-serif;
+  background: #d0cdc8;
+  -webkit-font-smoothing: antialiased;
+}
 
-    /* Section */
-    .section { margin-bottom: 56px; }
-    .section-title { font-size: 22px; font-weight: 800; color: var(--brown); border-left: 5px solid var(--green); padding-left: 14px; margin-bottom: 28px; }
-    .subsection-title { font-size: 16px; font-weight: 700; color: var(--brown); margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 2px solid #ece8e4; }
+.page {
+  width: 794px;
+  margin: 28px auto;
+  background: white;
+  position: relative;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22);
+}
 
-    /* Table */
-    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px; }
-    th, td { padding: 11px 14px; border: 1px solid #e0dbd6; text-align: left; vertical-align: top; }
-    th { background: var(--gray); font-weight: 600; width: 180px; color: #555; }
-    td strong { color: var(--brown); }
+/* ===========================
+   COVER
+=========================== */
+.cover {
+  background: #0c1b30;
+  color: white;
+  height: 1123px;
+  padding: 64px 64px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Highlight cards */
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
-    .card { background: var(--gray); border-radius: 8px; padding: 20px 18px; border-top: 4px solid var(--green); }
-    .card .num { font-size: 28px; font-weight: 800; color: var(--brown); line-height: 1; }
-    .card .label { font-size: 12px; color: #777; margin-top: 4px; }
+.circles {
+  position: absolute;
+  right: -140px;
+  top: 40px;
+  width: 640px;
+  height: 640px;
+  pointer-events: none;
+}
+.c {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,152,48,0.42);
+}
+.c1 { width: 130px; height: 130px; }
+.c2 { width: 230px; height: 230px; }
+.c3 { width: 335px; height: 335px; }
+.c4 { width: 450px; height: 450px; }
+.c5 { width: 575px; height: 575px; }
 
-    /* PDF images */
-    .pdf-img { width: 100%; border-radius: 8px; margin: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-    .img-caption { font-size: 12px; color: #888; text-align: center; margin-top: -10px; margin-bottom: 20px; }
-    .img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
-    .img-row img { width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.cover-top { position: relative; z-index: 2; }
 
-    /* Chart */
-    .chart-wrap { background: var(--gray); border-radius: 8px; padding: 28px 24px; margin: 20px 0; }
-    .chart-wrap h4 { font-size: 14px; font-weight: 700; color: #555; margin-bottom: 16px; }
+.bp-label {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 10px;
+}
+.bp-line { width: 36px; height: 2px; background: #c8960c; }
+.bp-text {
+  font-size: 10px; letter-spacing: 5px;
+  color: #c8960c; font-weight: 600;
+}
 
-    /* List */
-    ul.styled { padding-left: 0; list-style: none; }
-    ul.styled li { padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid #f0ebe6; font-size: 14px; }
-    ul.styled li::before { content: '●'; position: absolute; left: 0; color: var(--green); font-size: 10px; top: 11px; }
+.cover-brand {
+  font-size: 17px; letter-spacing: 5px;
+  color: rgba(255,255,255,0.82); font-weight: 300;
+}
 
-    /* Risk table */
-    .risk-table th:first-child { width: 140px; }
+.cover-main {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: flex-end;
+  position: relative; z-index: 2;
+  padding-bottom: 88px;
+}
 
-    /* Footer */
-    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #e0dbd6; text-align: center; font-size: 12px; color: #aaa; }
+.cover-title {
+  font-size: 82px; font-weight: 900;
+  color: #fff; line-height: 1;
+  letter-spacing: 4px; margin-bottom: 22px;
+}
 
-    /* Print */
-    @media print {
-      .page { padding: 24px 20px; }
-      .cover { padding: 40px 32px; }
-    }
-  </style>
+.cover-sub {
+  font-size: 14px; color: rgba(255,255,255,0.58);
+  letter-spacing: 4px; margin-bottom: 40px;
+}
+
+.cover-divider { width: 80px; height: 2px; background: #c8960c; margin-bottom: 40px; }
+
+.cover-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 26px 40px; max-width: 420px;
+}
+.cover-meta-item label {
+  display: block; font-size: 9px;
+  letter-spacing: 3px; color: rgba(255,255,255,0.38);
+  text-transform: uppercase; margin-bottom: 5px;
+}
+.cover-meta-item .val { font-size: 14.5px; color: white; font-weight: 500; }
+
+.cover-footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 64px 28px;
+  z-index: 2;
+}
+.cover-footer .addr { font-size: 11px; color: rgba(255,255,255,0.32); }
+.cover-footer .conf { font-size: 10px; letter-spacing: 4px; color: #c8960c; font-weight: 700; }
+
+/* ===========================
+   INNER PAGES
+=========================== */
+.inner {
+  background: white;
+  padding: 60px 64px 100px;
+  min-height: 1123px;
+  position: relative;
+}
+
+/* Section header */
+.sec-head {
+  display: flex; align-items: flex-start; gap: 20px;
+  margin-bottom: 26px; padding-bottom: 18px;
+  border-bottom: 1.5px solid #e0dbd2;
+}
+.sec-num {
+  font-size: 52px; font-weight: 900; color: #c8960c;
+  line-height: 0.88; letter-spacing: -2px;
+  font-style: italic; min-width: 72px;
+}
+.sec-text { padding-top: 4px; }
+.sec-en {
+  font-size: 9.5px; letter-spacing: 4px;
+  color: #b0a898; text-transform: uppercase; margin-bottom: 5px;
+}
+.sec-ja { font-size: 24px; font-weight: 800; color: #1a1a1a; }
+
+/* Subsection */
+.sub {
+  border-left: 3px solid #c8960c;
+  padding: 5px 14px;
+  margin: 22px 0 12px;
+}
+.sub-title { font-size: 13.5px; font-weight: 700; color: #1a1a1a; }
+
+/* Body text */
+.body { font-size: 13px; line-height: 1.88; color: #444; margin-bottom: 13px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 6px 0 14px; }
+thead tr th {
+  background: #1a2744; color: white;
+  padding: 10px 14px; text-align: left;
+  font-weight: 600; font-size: 11.5px; letter-spacing: 0.3px;
+}
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eae5dc;
+  color: #333; vertical-align: top; line-height: 1.6;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #faf7f2; }
+
+/* Profile table (label/value) */
+.profile-table td:first-child {
+  width: 130px; background: #f7f3ec !important;
+  color: #555; font-weight: 600;
+  border-right: 1px solid #eae5dc;
+}
+
+/* Highlight rows */
+.row-hl td { background: #f2ece0 !important; font-weight: 700; font-size: 13px; }
+.row-dark td { background: #1a2744 !important; color: white !important; font-weight: 700; }
+.row-dark td.neg, .row-dark td.pos { color: white !important; }
+
+/* KPI strip */
+.kpi-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 14px 0; border: 1px solid #e0dbd2;
+}
+.kpi-cell {
+  padding: 14px 16px; border-right: 1px solid #e0dbd2;
+}
+.kpi-cell:last-child { border-right: none; }
+.kpi-label { font-size: 9.5px; color: #aaa; letter-spacing: 0.5px; margin-bottom: 6px; }
+.kpi-big { font-size: 30px; font-weight: 900; color: #1a1a1a; line-height: 1; }
+.kpi-unit { font-size: 13px; font-weight: 500; }
+.kpi-sub { font-size: 10.5px; color: #888; margin-top: 4px; }
+
+/* Bullet list */
+.blist { list-style: none; padding: 0; margin: 6px 0; }
+.blist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; font-size: 12.5px; line-height: 1.65;
+  color: #333; border-bottom: 1px solid #f0ece4;
+}
+.blist li:last-child { border-bottom: none; }
+.blist li::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  border: 1.5px solid #c8960c; flex-shrink: 0; margin-top: 5px;
+}
+.blist li b { color: #1a1a1a; }
+.gold { color: #c8960c; font-weight: 700; }
+
+/* Business model */
+.biz-flow {
+  background: #f9f5ef; border: 1px solid #e0dbd2;
+  padding: 28px 40px; margin: 14px 0;
+  display: flex; flex-direction: column; align-items: center;
+}
+.biz-box {
+  width: 310px; background: white;
+  border: 1px solid #ddd; padding: 13px 20px; text-align: center;
+}
+.biz-box .bm { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+.biz-box .bs { font-size: 11px; color: #888; margin-top: 2px; }
+.biz-arr { display: flex; flex-direction: column; align-items: center; padding: 2px 0; }
+.biz-lbl { font-size: 10px; color: #c8960c; font-weight: 700; letter-spacing: 0.5px; margin: 4px 0 2px; }
+.biz-line {
+  width: 2px; height: 18px; background: #c8960c; position: relative;
+}
+.biz-line::after {
+  content: ''; position: absolute; bottom: -5px; left: -4px;
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid #c8960c;
+}
+
+/* Stat boxes (summary) */
+.stat-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 14px 0; border: 1px solid #e0dbd2;
+}
+.stat-cell { padding: 14px 12px; border-right: 1px solid #e0dbd2; text-align: left; }
+.stat-cell:last-child { border-right: none; }
+.sc-label { font-size: 9.5px; color: #aaa; letter-spacing: 0.5px; margin-bottom: 7px; text-transform: uppercase; }
+.sc-big { font-size: 26px; font-weight: 900; color: #1a1a1a; line-height: 1; }
+.sc-unit { font-size: 12px; font-weight: 500; }
+.sc-sub { font-size: 10.5px; color: #888; margin-top: 4px; }
+
+/* Numbers */
+.neg { color: #c0392b; font-weight: 700; }
+.pos { color: #1a6e3c; font-weight: 700; }
+
+/* Images */
+img.full { width: 100%; display: block; margin: 10px 0; }
+.duo { display: flex; gap: 16px; margin: 10px 0; }
+.duo img { width: calc(50% - 8px); display: block; }
+.img-cap { font-size: 11px; color: #999; text-align: center; margin: -4px 0 14px; line-height: 1.5; }
+
+/* Strengths box */
+.str-box {
+  background: #f9f5ef; border: 1px solid #e0dbd2;
+  padding: 18px 22px; margin: 10px 0 18px;
+}
+.str-head {
+  font-size: 11px; font-weight: 700; color: #c8960c;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid #e0dbd2;
+}
+
+/* Chart */
+.chart-wrap { position: relative; margin: 14px 0; }
+
+/* Page footer */
+.pg-foot {
+  position: absolute; bottom: 32px; left: 64px; right: 64px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #e0dbd2; padding-top: 12px;
+}
+.pg-foot .co { font-size: 10.5px; color: #bbb; }
+.pg-foot .pn { font-size: 10.5px; color: #bbb; }
+
+/* Print */
+@media print {
+  body { background: white; }
+  .page { margin: 0; box-shadow: none; width: 100%; page-break-after: always; }
+  .inner { page-break-after: always; }
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .page { width: 100%; }
+  .inner { padding: 40px 28px 80px; }
+  .cover { padding: 44px 28px 0; height: auto; min-height: 100vh; }
+  .cover-title { font-size: 56px; }
+  .kpi-strip, .stat-row { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
 </head>
 <body>
+
+<!-- COVER -->
 <div class="page">
-
-  <!-- Cover -->
-  <div class="cover">
-    <div class="cover-left">
-      <h1>BUSINESS PLAN</h1>
-      <h2>事業計画書</h2>
-      <p>法人銀行口座開設用</p>
-    </div>
-    <div class="cover-right">
-      <div class="company">株式会社LOOPERS</div>
-      <div class="date">2026年6月</div>
-    </div>
+<div class="cover">
+  <div class="circles">
+    <div class="c c1"></div>
+    <div class="c c2"></div>
+    <div class="c c3"></div>
+    <div class="c c4"></div>
+    <div class="c c5"></div>
   </div>
 
-  <!-- 1. 会社基本情報 -->
-  <div class="section">
-    <div class="section-title">1. 会社基本情報</div>
-    <table>
-      <tr><th>商号</th><td>株式会社LOOPERS</td></tr>
-      <tr><th>代表取締役</th><td>大川 樹</td></tr>
-      <tr><th>所在地</th><td>〒163-0649 東京都新宿区西新宿１−２５−１<br>新宿センタービル49階 +OURS新宿内</td></tr>
-      <tr><th>設立年月日</th><td>2026年4月8日</td></tr>
-      <tr><th>資本金</th><td>1,000,000円（100万円）</td></tr>
-      <tr><th>事業目的</th><td>フランチャイズ加盟店の運営・管理</td></tr>
-    </table>
+  <div class="cover-top">
+    <div class="bp-label">
+      <span class="bp-line"></span>
+      <span class="bp-text">Business Plan</span>
+    </div>
+    <div class="cover-brand">LOOPERS INC.&nbsp;&nbsp;&nbsp;×&nbsp;&nbsp;&nbsp;STREET CHURROS</div>
   </div>
 
-  <!-- 2. 事業概要 -->
-  <div class="section">
-    <div class="section-title">2. 事業概要</div>
-
-    <div class="subsection-title">2-1. 事業の概要</div>
-    <p>当社は、韓国発のスペシャルティチュロスブランド「STREET CHURROS」のフランチャイズ加盟店として、商業施設への出店および運営を行います。フランチャイズ本部である株式会社EMOLEEと加盟契約を締結し、専門の運営代行会社を活用しながら収益力の高い立地への出店を推進します。</p>
-
-    <div class="subsection-title">2-2. ブランド実績 — STREET CHURROS</div>
-
-    <div class="cards">
-      <div class="card">
-        <div class="num">9ヵ国</div>
-        <div class="label">グローバル展開（2026年12ヵ国予定）</div>
+  <div class="cover-main">
+    <h1 class="cover-title">事業計画書</h1>
+    <p class="cover-sub">フランチャイズ事業の設計と５カ年成長計画</p>
+    <div class="cover-divider"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Company</label>
+        <div class="val">株式会社LOOPERS</div>
       </div>
-      <div class="card">
-        <div class="num">150店舗超</div>
-        <div class="label">韓国・マレーシア等での累計展開数</div>
+      <div class="cover-meta-item">
+        <label>Representative</label>
+        <div class="val">代表取締役　大川 樹</div>
       </div>
-      <div class="card">
-        <div class="num">2,000万本</div>
-        <div class="label">累計販売数</div>
+      <div class="cover-meta-item">
+        <label>Established</label>
+        <div class="val">2026年4月8日</div>
+      </div>
+      <div class="cover-meta-item">
+        <label>Issued</label>
+        <div class="val">2026年6月</div>
       </div>
     </div>
-
-    <!-- タイムライン -->
-    <img src="img/churros_p6.png" class="pdf-img" alt="STREET CHURROSブランド歴史タイムライン（2014〜2025）">
-    <p class="img-caption">ブランド年表：2014年韓国創業→2019年ハーバードビジネススクール選定→2024年日本上陸</p>
-
-    <!-- ハーバード -->
-    <div class="subsection-title">2-3. ハーバードビジネススクール選定</div>
-    <img src="img/churros_p7.png" class="pdf-img" alt="ハーバードビジネススクールによるブランド成功事例選定">
-    <p class="img-caption">2019年、ハーバードビジネススクールのブランド成功事例分析対象企業に選定（世界的ブランドと並んで研究・分析の対象となる）</p>
-
-    <!-- グローバルマップ -->
-    <div class="subsection-title">2-4. グローバル展開</div>
-    <img src="img/churros_p8.png" class="pdf-img" alt="STREET CHURROS 9ヵ国グローバル展開マップ">
-    <p class="img-caption">韓国・米国・中国・マレーシア・台湾・タイ・インドネシア・日本・モンゴルの9ヵ国に展開</p>
-
-    <!-- 商品 -->
-    <div class="subsection-title">2-5. 商品の特徴</div>
-    <img src="img/churros_p10.png" class="pdf-img" alt="STREET CHURROSの商品">
-    <p class="img-caption">16種類のヘルシーな穀物をブレンドした独自生地。バリスタチャンピオン監修のドリンクも提供</p>
-
-    <!-- 強み -->
-    <div class="subsection-title">2-6. 運営の強み</div>
-    <img src="img/churros_p14.png" class="pdf-img" alt="STREET CHURROSの運営の強み">
-    <p class="img-caption">少人数・小スペース運営、離職率7%（業界平均26.8%）、万全のフォロー体制</p>
-
-    <!-- メディア -->
-    <div class="subsection-title">2-7. メディア・集客実績</div>
-    <img src="img/churros_p15.png" class="pdf-img" alt="メディア実績：BTSほか">
-    <p class="img-caption">BTSメンバーによる韓国での実食、国内インフルエンサーとのコラボ実績多数。広告費ゼロでSNS自然拡散</p>
   </div>
 
-  <!-- 3. 出店計画 -->
-  <div class="section">
-    <div class="section-title">3. 出店計画</div>
-    <div class="subsection-title">第1号店：シャミネ松江</div>
-    <table>
-      <tr><th>施設名</th><td>シャミネ松江（JR松江駅直結商業施設）</td></tr>
-      <tr><th>所在地</th><td>島根県松江市</td></tr>
-      <tr><th>オープン予定</th><td>2026年9月</td></tr>
-      <tr><th>家賃条件</th><td>月額最低賃料20万円（売上200万円超過分の10%）</td></tr>
-      <tr><th>位置付け</th><td>中国地方初出店。施設リニューアルの目玉として誘致。施設内スタバ・マネケンの実績から高い売上ポテンシャルを確認済み</td></tr>
-    </table>
-
-    <div class="subsection-title">中期出店ロードマップ</div>
-    <table>
-      <tr><th>2026年9月</th><td>第1号店（シャミネ松江）オープン</td></tr>
-      <tr><th>2027年</th><td>第1号店の実績をもとに2店舗目の立地選定・申込開始</td></tr>
-      <tr><th>2028年以降</th><td>全国の駅商業施設・大型ショッピングモールへの多店舗展開</td></tr>
-    </table>
+  <div class="cover-footer">
+    <span class="addr">株式会社LOOPERS&nbsp;&nbsp;/&nbsp;&nbsp;東京都新宿区西新宿</span>
+    <span class="conf">CONFIDENTIAL</span>
   </div>
-
-  <!-- 4. 収支計画 -->
-  <div class="section">
-    <div class="section-title">4. 収支計画（5カ年）</div>
-
-    <div class="subsection-title">既存店舗の月商実績</div>
-    <div class="chart-wrap">
-      <h4>既存店舗 月商比較（万円）</h4>
-      <canvas id="storeChart" height="120"></canvas>
-    </div>
-
-    <div class="subsection-title">月次収支モデル（安定期・1店舗）</div>
-    <table>
-      <tr><th>売上高</th><td>2,000,000円（100%）</td></tr>
-      <tr><th>売上原価</th><td>600,000円（30%）</td></tr>
-      <tr><th>粗利益</th><td><strong>1,400,000円（70%）</strong></td></tr>
-      <tr><th>人件費</th><td>500,000円（25%）</td></tr>
-      <tr><th>家賃</th><td>200,000円（10%）</td></tr>
-      <tr><th>ロイヤリティ等</th><td>100,000円（5%）</td></tr>
-      <tr><th>その他経費</th><td>100,000円（5%）</td></tr>
-      <tr><th>営業利益</th><td><strong>500,000円（25%）</strong></td></tr>
-    </table>
-
-    <div class="subsection-title">5カ年収支計画</div>
-    <div class="chart-wrap">
-      <h4>年間売上高・営業利益の推移（万円）</h4>
-      <canvas id="planChart" height="180"></canvas>
-    </div>
-    <table>
-      <tr><th>2026年（第1期）</th><td>売上高 800万円 ／ 営業利益 ▲200万円（開業4ヶ月・初期投資回収中）</td></tr>
-      <tr><th>2027年（第2期）</th><td>売上高 2,400万円 ／ 営業利益 400万円（単年黒字化・累計損益回復）</td></tr>
-      <tr><th>2028年（第3期）</th><td>売上高 3,000万円 ／ 営業利益 600万円（1〜2店舗）</td></tr>
-      <tr><th>2029年（第4期）</th><td>売上高 4,800万円 ／ 営業利益 1,000万円（2店舗）</td></tr>
-      <tr><th>2030年（第5期）</th><td>売上高 6,000万円 ／ 営業利益 1,300万円（2〜3店舗）</td></tr>
-    </table>
-
-    <div class="subsection-title">初期投資の内訳</div>
-    <div class="chart-wrap">
-      <h4>初期投資構成（合計 910万円）</h4>
-      <canvas id="investChart" height="180"></canvas>
-    </div>
-  </div>
-
-  <!-- 5. 資金計画 -->
-  <div class="section">
-    <div class="section-title">5. 資金計画</div>
-    <p style="margin-bottom:16px">初期投資の大部分は自己資金で賄います。2店舗目以降の規模拡大に際しては、第1号店の実績を踏まえた金融機関融資の活用も検討します。</p>
-    <table>
-      <tr><th>自己資金（資本金）</th><td>1,000,000円（11%）</td></tr>
-      <tr><th>自己資金（加盟料等既払い）</th><td>3,300,000円（36%）</td></tr>
-      <tr><th>自己資金（追加）</th><td>4,800,000円（53%）</td></tr>
-      <tr><th>合計</th><td><strong>9,100,000円（自己資金100%）</strong></td></tr>
-    </table>
-
-    <div class="subsection-title">口座の活用目的</div>
-    <ul class="styled">
-      <li>内装工事会社・仕入先への支払い</li>
-      <li>FCフランチャイズ本部へのロイヤリティ支払い</li>
-      <li>人件費・運転資金の管理</li>
-      <li>商業施設からの売上入金口座</li>
-    </ul>
-  </div>
-
-  <!-- 6. 強みとリスク -->
-  <div class="section">
-    <div class="section-title">6. 強みとリスク対策</div>
-    <div class="subsection-title">強み</div>
-    <ul class="styled">
-      <li>ハーバードビジネススクール選定ブランドへの加盟。世界9ヵ国・累計2,000万本販売の実績</li>
-      <li>JR系商業施設（シャミネ松江）への出店確定。安定した集客基盤と家賃優遇条件を獲得済み</li>
-      <li>専門の運営代行会社（EMOLEE）による経理・雇用・店舗運営の一括委託</li>
-      <li>フランチャイズ本部による物件探し・設計・研修・採用の全面サポート（成功率約80%）</li>
-    </ul>
-
-    <div class="subsection-title">リスクと対策</div>
-    <table class="risk-table">
-      <tr><th>売上未達リスク</th><td>開業3ヶ月分の運転資金を確保。FC本部のデータに基づく保守的な売上計画で設計</td></tr>
-      <tr><th>施工・開業遅延</th><td>施設側との連携をFC本部が主導。スケジュール管理は本部に委託</td></tr>
-      <tr><th>競合リスク</th><td>駅構内という独自立地。持ち帰り特化かつ健康志向の商品設計で競合と明確に差別化</td></tr>
-    </table>
-  </div>
-
-  <footer>
-    <p>本事業計画書は銀行口座開設用として作成されたものです。</p>
-    <p style="margin-top:4px">株式会社LOOPERS &nbsp;/&nbsp; 2026年6月</p>
-  </footer>
-
+</div>
 </div>
 
-<script>
-// 既存店舗月商
-new Chart(document.getElementById('storeChart'), {
-  type: 'bar',
-  data: {
-    labels: ['下北沢1号店（路面）', 'ららぽーと堺（商業施設）', 'シャミネ松江（計画値）'],
-    datasets: [{
-      label: '月商（万円）',
-      data: [300, 400, 200],
-      backgroundColor: ['#7ec8b5', '#5ca891', '#e8c4a0'],
-      borderRadius: 6
-    }]
-  },
-  options: {
-    plugins: { legend: { display: false } },
-    scales: { y: { beginAtZero: true, ticks: { callback: v => v + '万' } } }
-  }
-});
 
-// 5カ年収支
+<!-- PAGE 1: 会社基本情報 + 事業概要 start -->
+<div class="page">
+<div class="inner">
+
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div class="sec-text">
+      <div class="sec-en">Corporate Profile</div>
+      <div class="sec-ja">会社基本情報</div>
+    </div>
+  </div>
+
+  <table class="profile-table">
+    <tbody>
+      <tr><td>商号</td><td>株式会社LOOPERS</td></tr>
+      <tr><td>代表取締役</td><td>大川 樹</td></tr>
+      <tr><td>所在地</td><td>〒163-0649　東京都新宿区西新宿１−２５−１　新宿センタービル49階 +OURS新宿内</td></tr>
+      <tr><td>設立年月日</td><td>2026年4月8日</td></tr>
+      <tr><td>資本金</td><td>1,000,000円（100万円）</td></tr>
+      <tr><td>事業目的</td><td>フランチャイズ加盟店の運営・管理</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:44px">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-text">
+        <div class="sec-en">Business Overview</div>
+        <div class="sec-ja">事業概要</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub"><div class="sub-title">事業の概要</div></div>
+  <p class="body">当社は、韓国発のスペシャルティチュロスブランド「STREET CHURROS」のフランチャイズ加盟店として、商業施設への出店および運営を行います。</p>
+  <p class="body">フランチャイズ本部である株式会社EMOLEEと加盟契約を締結し、同社の運営ノウハウ・仕入れ体制・マーケティング支援を活用しながら、収益力の高い立地への出店を推進します。</p>
+
+  <div class="sub"><div class="sub-title">ブランド概要 — STREET CHURROS</div></div>
+
+  <div class="kpi-strip">
+    <div class="kpi-cell">
+      <div class="kpi-label">創業</div>
+      <div class="kpi-big">2014<span class="kpi-unit">年</span></div>
+      <div class="kpi-sub">ソウル・梨泰院</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">4年4ヶ月で</div>
+      <div class="kpi-big">200<span class="kpi-unit">+店舗</span></div>
+      <div class="kpi-sub">7カ国へ急拡大</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">グローバル展開</div>
+      <div class="kpi-big">9<span class="kpi-unit">カ国</span></div>
+      <div class="kpi-sub">2026年中に12カ国へ</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">ハーバード（HBS）</div>
+      <div class="kpi-big">2019</div>
+      <div class="kpi-sub">成功事例に選定</div>
+    </div>
+  </div>
+
+  <div class="sub"><div class="sub-title">ブランドの歴史・グローバル実績</div></div>
+  <ul class="blist">
+    <li>2014年、韓国ソウル・梨泰院（イテウォン）で創業。開業8ヶ月後には韓国国内で数々の食品・ブランド賞を受賞</li>
+    <li>創業1年2ヶ月後にグローバル事業部を立ち上げ、<b>創業から4年4ヶ月で7カ国・200店舗超</b>を展開</li>
+    <li><b class="gold">2019年、ハーバードビジネススクールのブランド成功事例分析対象企業に選定</b>（トヨタ・マクドナルド・スターバックスなど大手企業と並んで取り上げられた）</li>
+    <li>同年、JRが日本導入を検討したが2020年のコロナ禍により契約白紙に。2024年に再リリース</li>
+    <li><b>現在：韓国120店舗、マレーシア30店舗、世界9カ国展開</b>（2026年中に12カ国予定）</li>
+    <li>日本国内では3年300店舗展開を目標に積極出店中</li>
+  </ul>
+
+  <div class="sub"><div class="sub-title">日本市場での認知・需要</div></div>
+  <ul class="blist">
+    <li>全国230件以上の商業施設からオファーを受領（沖縄〜福島まで）</li>
+    <li>森ビル（ラフォーレ原宿）・JR・ドコモ主体の国立競技場運営会社（JNSE）など大手ディベロッパーが出店を要請するブランド力を持つ</li>
+    <li>広告費ゼロにもかかわらずSNS・YouTubeで自然拡散。韓国渡航経験のある日本人による口コミが多数蓄積済み</li>
+  </ul>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">1 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 2: 事業概要 continued -->
+<div class="page">
+<div class="inner">
+
+  <div class="sub" style="margin-top:0"><div class="sub-title">商品・運営の特徴</div></div>
+  <ul class="blist">
+    <li>16種類のヘルシー穀物（レンズ豆・大豆・トウモロコシパウダー等）をブレンドした独自生地。小麦粉主体の他社チュロスと明確に差別化</li>
+    <li>バリスタ世界大会チャンピオンが2年間研究して開発したドリンクメニュー</li>
+    <li>店舗で生地を絞る製法（冷凍品を揚げるだけでない）による品質優位性</li>
+    <li>独自マシンによる疲れにくい設計で離職率低下を実現（業界平均26.8%に対し7%）</li>
+    <li>金型変更でチュロドッグ・チュロフライなど世界特許商品も展開可能（MD構成の柔軟性）</li>
+  </ul>
+
+  <div class="duo">
+    <img src="img/churros_p10.png" alt="商品写真">
+    <img src="img/churros_p14.png" alt="運営の強み">
+  </div>
+  <p class="img-cap">（左）16種類穀物ブレンドのスペシャルティチュロス　（右）少人数・省スペース運営、業界最低水準の離職率7%</p>
+
+  <div class="sub"><div class="sub-title">既存店舗の収益実績</div></div>
+
+  <table>
+    <thead><tr><th>店舗</th><th>月商</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>下北沢1号店（路面店）</td>
+        <td>約 3,000,000円</td>
+        <td>駅1日乗降客数20万人超のエリア</td>
+      </tr>
+      <tr>
+        <td>ららぽーと堺店（商業施設）</td>
+        <td>約 4,000,000円</td>
+        <td>営業利益100万円程度</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="blist">
+    <li>損益分岐点：月140万円（家賃30万円の場合）</li>
+    <li>原価率：30%　／　ロイヤリティ：売上の5%（韓国2.5%＋日本2.5%）</li>
+  </ul>
+
+  <div class="sub"><div class="sub-title">ビジネスモデル</div></div>
+
+  <div class="biz-flow">
+    <div class="biz-box">
+      <div class="bm">当社（オーナー）</div>
+      <div class="bs">株式会社LOOPERS</div>
+    </div>
+    <div class="biz-arr">
+      <div class="biz-lbl">加盟料・ロイヤリティ</div>
+      <div class="biz-line"></div>
+    </div>
+    <div class="biz-box">
+      <div class="bm">フランチャイズ本部</div>
+      <div class="bs">STREET CHURROS</div>
+    </div>
+    <div class="biz-arr">
+      <div class="biz-lbl">運営委託</div>
+      <div class="biz-line"></div>
+    </div>
+    <div class="biz-box">
+      <div class="bm">株式会社EMOLEE</div>
+      <div class="bs">フランチャイズ受託・運営代行</div>
+    </div>
+    <div class="biz-arr">
+      <div class="biz-lbl">店舗出店・運営</div>
+      <div class="biz-line"></div>
+    </div>
+    <div class="biz-box">
+      <div class="bm">各商業施設テナント</div>
+      <div class="bs">シャミネ松江 ほか</div>
+    </div>
+  </div>
+
+  <ul class="blist" style="margin-top:14px">
+    <li><b>収益源</b>：各店舗の売上から家賃・人件費・原価・ロイヤリティを差し引いた営業利益</li>
+    <li><b>強み</b>：専門の運営代行会社への委託により、オーナーの現場負担を最小化しながら安定した店舗運営を実現</li>
+  </ul>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">2 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 3: 出店計画 -->
+<div class="page">
+<div class="inner">
+
+  <div class="duo">
+    <img src="img/churros_p6.png" alt="ブランド年表">
+    <img src="img/churros_p8.png" alt="グローバル展開マップ">
+  </div>
+  <p class="img-cap">（左）2014年韓国創業→HBS選定→世界9カ国展開の軌跡　（右）韓国・マレーシア・日本ほか世界9カ国でのグローバル展開</p>
+
+  <img class="full" src="img/churros_p15.png" alt="メディア・セレブリティ実績">
+  <p class="img-cap">BTSメンバーによる実食・SNS拡散実績。広告費ゼロで国内外のメディアに自然掲載、インフルエンサーコラボ多数</p>
+
+  <div style="margin-top:36px">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-text">
+        <div class="sec-en">Store Rollout</div>
+        <div class="sec-ja">出店計画</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub"><div class="sub-title">第1号店：シャミネ松江</div></div>
+
+  <table class="profile-table">
+    <tbody>
+      <tr><td>施設名</td><td>シャミネ松江（JR松江駅直結商業施設）</td></tr>
+      <tr><td>所在地</td><td>島根県松江市</td></tr>
+      <tr><td>オープン予定</td><td>2026年9月</td></tr>
+      <tr><td>家賃条件</td><td>月額最低賃料20万円（売上200万円超過分の10%）</td></tr>
+      <tr><td>位置付け</td><td>中国地方初出店。施設のリニューアル目玉として誘致。施設内スタバ・マネケンの実績から高い売上ポテンシャルを確認済み</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub"><div class="sub-title">中期出店計画</div></div>
+
+  <table>
+    <thead><tr><th style="width:160px">時期</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>2026年9月</td><td>第1号店（シャミネ松江）オープン</td></tr>
+      <tr><td>2027年</td><td>第1号店の実績をもとに2店舗目の立地選定・申込開始</td></tr>
+      <tr><td>2028年以降</td><td>全国の駅商業施設・大型ショッピングモールへの多店舗展開</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">3 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 4: 収支計画 -->
+<div class="page">
+<div class="inner">
+
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div class="sec-text">
+      <div class="sec-en">Financial Projection · 5-Year</div>
+      <div class="sec-ja">収支計画（5カ年）</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="sc-label">営業利益率</div>
+      <div class="sc-big">25<span class="sc-unit">%</span></div>
+      <div class="sc-sub">安定期・1店舗</div>
+    </div>
+    <div class="stat-cell">
+      <div class="sc-label">単年黒字化</div>
+      <div class="sc-big">2027<span class="sc-unit">年</span></div>
+      <div class="sc-sub">第2期より</div>
+    </div>
+    <div class="stat-cell">
+      <div class="sc-label">5年累計営業利益</div>
+      <div class="sc-big">31<span class="sc-unit">百万円</span></div>
+      <div class="sc-sub">2030年第5期時点</div>
+    </div>
+    <div class="stat-cell">
+      <div class="sc-label">初期投資総額</div>
+      <div class="sc-big">910<span class="sc-unit">万円</span></div>
+      <div class="sc-sub">自己資金100%</div>
+    </div>
+  </div>
+
+  <div class="sub"><div class="sub-title">前提条件</div></div>
+  <ul class="blist">
+    <li>2026年9月に第1号店（シャミネ松江）オープン</li>
+    <li>月商は開業後6ヶ月で安定水準に到達と想定</li>
+    <li>売上原価率：30% ／ 人件費率：25% ／ フランチャイズロイヤリティ等：売上の5%</li>
+    <li>家賃：月額20万円固定（売上200万円以下の場合） ／ その他経費：月額10万円</li>
+  </ul>
+
+  <div class="sub"><div class="sub-title">月次収支モデル（安定期・1店舗）</div></div>
+
+  <table>
+    <thead>
+      <tr><th>項目</th><th style="text-align:right;width:160px">金額</th><th style="text-align:right;width:80px">構成比</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>売上高</td><td style="text-align:right">2,000,000円</td><td style="text-align:right">100%</td></tr>
+      <tr><td>売上原価</td><td style="text-align:right">600,000円</td><td style="text-align:right">30%</td></tr>
+      <tr class="row-hl"><td>粗利益</td><td style="text-align:right">1,400,000円</td><td style="text-align:right">70%</td></tr>
+      <tr><td>人件費</td><td style="text-align:right">500,000円</td><td style="text-align:right">25%</td></tr>
+      <tr><td>家賃</td><td style="text-align:right">200,000円</td><td style="text-align:right">10%</td></tr>
+      <tr><td>ロイヤリティ等</td><td style="text-align:right">100,000円</td><td style="text-align:right">5%</td></tr>
+      <tr><td>その他経費</td><td style="text-align:right">100,000円</td><td style="text-align:right">5%</td></tr>
+      <tr class="row-dark"><td>営業利益</td><td style="text-align:right">500,000円</td><td style="text-align:right">25%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub"><div class="sub-title">5カ年収支計画</div></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>年度</th>
+        <th style="text-align:center;width:70px">店舗数</th>
+        <th style="text-align:right">年間売上高</th>
+        <th style="text-align:right">年間営業利益</th>
+        <th style="text-align:right">累計営業利益</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2026年（第1期）</td>
+        <td style="text-align:center">1店</td>
+        <td style="text-align:right">8,000,000</td>
+        <td style="text-align:right" class="neg">▲2,000,000</td>
+        <td style="text-align:right" class="neg">▲2,000,000</td>
+      </tr>
+      <tr>
+        <td>2027年（第2期）</td>
+        <td style="text-align:center">1店</td>
+        <td style="text-align:right">24,000,000</td>
+        <td style="text-align:right" class="pos">4,000,000</td>
+        <td style="text-align:right" class="pos">2,000,000</td>
+      </tr>
+      <tr>
+        <td>2028年（第3期）</td>
+        <td style="text-align:center">1〜2店</td>
+        <td style="text-align:right">30,000,000</td>
+        <td style="text-align:right" class="pos">6,000,000</td>
+        <td style="text-align:right" class="pos">8,000,000</td>
+      </tr>
+      <tr>
+        <td>2029年（第4期）</td>
+        <td style="text-align:center">2店</td>
+        <td style="text-align:right">48,000,000</td>
+        <td style="text-align:right" class="pos">10,000,000</td>
+        <td style="text-align:right" class="pos">18,000,000</td>
+      </tr>
+      <tr class="row-dark">
+        <td>2030年（第5期）</td>
+        <td style="text-align:center">2〜3店</td>
+        <td style="text-align:right">60,000,000</td>
+        <td style="text-align:right">13,000,000</td>
+        <td style="text-align:right">31,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:#999;margin-top:6px;line-height:1.65">
+    ※ 2026年第1期は開業準備（4〜8月）・オープン後4ヶ月（9〜12月）の売上。初期投資回収中のため赤字見込み。<br>
+    ※ 2027年第2期より単年黒字化・累計損益回復を見込む。
+  </p>
+
+  <div class="chart-wrap" style="height:170px;margin-top:20px">
+    <canvas id="planChart"></canvas>
+  </div>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">4 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 5: 初期投資 + 資金計画 -->
+<div class="page">
+<div class="inner">
+
+  <div class="sub" style="margin-top:0"><div class="sub-title">初期投資の内訳</div></div>
+
+  <table>
+    <thead><tr><th>項目</th><th style="text-align:right;width:160px">金額</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr><td>フランチャイズ加盟料</td><td style="text-align:right">3,300,000円</td><td>支払済み（2026年2月）</td></tr>
+      <tr><td>内装・設備工事費</td><td style="text-align:right">4,000,000円</td><td>概算（施設確定後に精査）</td></tr>
+      <tr><td>什器・備品</td><td style="text-align:right">500,000円</td><td>概算</td></tr>
+      <tr><td>法人設立費用</td><td style="text-align:right">300,000円</td><td>登記・司法書士報酬等</td></tr>
+      <tr><td>運転資金</td><td style="text-align:right">1,000,000円</td><td>開業3ヶ月分相当</td></tr>
+      <tr class="row-dark"><td>合計</td><td style="text-align:right">9,100,000円</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:40px">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-text">
+        <div class="sec-en">Funding Plan</div>
+        <div class="sec-ja">資金計画</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub"><div class="sub-title">資金調達方針</div></div>
+  <p class="body">初期投資の大部分は自己資金で賄います。事業規模の拡大（2店舗目以降）に際しては、実績を踏まえた金融機関融資の活用も検討します。</p>
+
+  <table>
+    <thead><tr><th>資金調達区分</th><th style="text-align:right;width:160px">金額</th><th style="text-align:right;width:80px">割合</th></tr></thead>
+    <tbody>
+      <tr><td>自己資金（資本金）</td><td style="text-align:right">1,000,000円</td><td style="text-align:right">11%</td></tr>
+      <tr><td>自己資金（加盟料等既払い）</td><td style="text-align:right">3,300,000円</td><td style="text-align:right">36%</td></tr>
+      <tr><td>自己資金（追加）</td><td style="text-align:right">4,800,000円</td><td style="text-align:right">53%</td></tr>
+      <tr class="row-dark"><td>合計</td><td style="text-align:right">9,100,000円</td><td style="text-align:right">100%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub"><div class="sub-title">口座の活用目的</div></div>
+  <ul class="blist">
+    <li>内装工事会社・仕入先への支払い</li>
+    <li>FC本部へのロイヤリティ支払い</li>
+    <li>人件費・運転資金の管理</li>
+    <li>売上入金口座（商業施設からの精算）</li>
+  </ul>
+
+  <div style="display:flex;gap:32px;align-items:center;margin-top:24px">
+    <div class="chart-wrap" style="flex:1;height:200px">
+      <canvas id="investChart"></canvas>
+    </div>
+    <div style="flex:0 0 auto">
+      <div style="font-size:11px;color:#888;margin-bottom:12px;letter-spacing:0.5px;text-transform:uppercase">初期投資構成</div>
+      <div style="font-size:30px;font-weight:900;color:#1a1a1a;line-height:1">910<span style="font-size:14px;font-weight:500">万円</span></div>
+      <div style="font-size:11px;color:#aaa;margin-top:6px">自己資金100%</div>
+      <div style="margin-top:20px;font-size:11.5px;color:#555;line-height:2">
+        <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:10px;background:#1a2744;border-radius:50%"></span>FC加盟料 330万</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:10px;background:#c8960c;border-radius:50%"></span>内装・設備 400万</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:10px;background:#4a6a9a;border-radius:50%"></span>什器・備品 50万</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:10px;background:#d4b060;border-radius:50%"></span>法人設立 30万</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:10px;background:#8a9abb;border-radius:50%"></span>運転資金 100万</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">5 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 6: 強み・リスク -->
+<div class="page">
+<div class="inner">
+
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <div class="sec-text">
+      <div class="sec-en">Strengths &amp; Risks</div>
+      <div class="sec-ja">会社の強み・リスクと対策</div>
+    </div>
+  </div>
+
+  <div class="str-box">
+    <div class="str-head">強み</div>
+    <ul class="blist">
+      <li>JR系商業施設（シャミネ松江）への出店確定。安定した集客基盤</li>
+      <li>専門の運営代行会社（株式会社EMOLEE）による安定した店舗オペレーション</li>
+      <li>フランチャイズ本部の仕入れ・マーケティング支援によるコスト最適化</li>
+      <li>中国地方初出店として施設側の強い誘致意向あり（家賃優遇条件を獲得済み）</li>
+    </ul>
+  </div>
+
+  <div class="sub"><div class="sub-title">リスクと対策</div></div>
+
+  <table>
+    <thead><tr><th style="width:160px">リスク</th><th>対策</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>売上未達リスク</td>
+        <td>開業3ヶ月分の運転資金を確保。FC本部のデータに基づく保守的な売上計画で設計</td>
+      </tr>
+      <tr>
+        <td>施工・オープン遅延</td>
+        <td>施設側との連携をFC本部が主導。スケジュール管理はFC本部に委託</td>
+      </tr>
+      <tr>
+        <td>競合リスク</td>
+        <td>駅構内という独自立地。持ち帰り特化の商品設計で競合と差別化</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center;margin-top:100px;padding-top:32px;border-top:1px solid #e0dbd2">
+    <p style="font-size:13px;color:#555">本事業計画書は<b>銀行口座開設用</b>として作成されたものです。</p>
+    <p style="font-size:13px;color:#999;margin-top:6px">株式会社LOOPERS　／　2026年6月</p>
+  </div>
+
+  <div class="pg-foot">
+    <span class="co">株式会社LOOPERS　事業計画書</span>
+    <span class="pn">6 / 6</span>
+  </div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// 5カ年収支チャート
 new Chart(document.getElementById('planChart'), {
   type: 'bar',
   data: {
     labels: ['2026年', '2027年', '2028年', '2029年', '2030年'],
     datasets: [
       {
-        label: '年間売上高',
+        label: '年間売上高（万円）',
         data: [800, 2400, 3000, 4800, 6000],
-        backgroundColor: '#7ec8b5',
-        borderRadius: 4,
+        backgroundColor: 'rgba(200,150,12,0.15)',
+        borderColor: '#c8960c',
+        borderWidth: 1.5,
+        borderRadius: 3,
         order: 2
       },
       {
-        label: '営業利益',
+        label: '営業利益（万円）',
         data: [-200, 400, 600, 1000, 1300],
         type: 'line',
-        borderColor: '#5c3d2e',
-        backgroundColor: 'rgba(92,61,46,0.1)',
-        borderWidth: 2.5,
-        pointRadius: 5,
-        pointBackgroundColor: '#5c3d2e',
+        borderColor: '#1a2744',
+        backgroundColor: 'rgba(26,39,68,0.06)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointBackgroundColor: '#1a2744',
         tension: 0.3,
         order: 1
       }
     ]
   },
   options: {
-    plugins: { legend: { position: 'bottom' } },
-    scales: { y: { ticks: { callback: v => v + '万' } } }
+    plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 10 } } },
+    scales: {
+      y: { ticks: { callback: v => v + '万', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.04)' } },
+      x: { ticks: { font: { size: 10 } }, grid: { display: false } }
+    }
   }
 });
 
-// 初期投資内訳
+// 初期投資ドーナツ
 new Chart(document.getElementById('investChart'), {
   type: 'doughnut',
   data: {
     labels: ['FC加盟料', '内装・設備工事', '什器・備品', '法人設立費用', '運転資金'],
     datasets: [{
       data: [330, 400, 50, 30, 100],
-      backgroundColor: ['#7ec8b5', '#5ca891', '#a8d8cc', '#e8c4a0', '#d4a878'],
+      backgroundColor: ['#1a2744', '#c8960c', '#4a6a9a', '#d4b060', '#8a9abb'],
       borderWidth: 2,
       borderColor: '#fff'
     }]
   },
   options: {
     plugins: {
-      legend: { position: 'right' },
+      legend: { display: false },
       tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '万円' } }
-    }
+    },
+    cutout: '65%'
   }
 });
 </script>
